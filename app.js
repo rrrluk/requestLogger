@@ -19,6 +19,7 @@ app.get("/" + appName, function (req, res) {
 });
 
 app.post("/" + appName + "/postroute", function (req, res) {
+    console.log(req.headers);
     console.log(req.body);
     res.send("post route");
 
