@@ -14,7 +14,7 @@ app.get("/", function (req, res) {
     res.render("home.ejs");
 });
 
-app.post("/postroute", function (req, res) {
+app.post("/" + appName + "/postroute", function (req, res) {
     console.log(req.body);
     res.send("post route");
 
