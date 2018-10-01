@@ -5,8 +5,9 @@ var bodyParser = require("body-parser");
 var appName = "requestLogger";
 var port = "8008";
 
+// parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({
-    extenderd: true
+    extended: false
 }));
 
 app.get("/", function (req, res) {
