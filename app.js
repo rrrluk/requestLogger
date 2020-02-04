@@ -26,18 +26,16 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.set("view engine", "ejs");
-// ei saa DO reverse proxyt tööle muidu, läheb / kataloogist otsima neid views-i
-app.set('views', appName + '/views');
 
 app.get("/" + appName, function (req, res) {
-    res.render("home.ejs");
+    res.render("home");
 });
 
 app.post("/" + appName + "/postroute", function (req, res) {
     logger.info('--- REQUEST ---')
     console.log(req.headers);
     console.log(req.body);
-    res.send("post route");
+    res.render("post.ejs");
 
 })
 
